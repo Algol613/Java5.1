@@ -3,7 +3,7 @@ public class BonusService {
         int percent = registered ? 3 : 1;
         long bonus = amount * percent / 100 / 100;
         long limit = 500;
-        if (limit < bonus) {
+        if (bonus > limit) {
             bonus = limit;
         }
         return bonus;
