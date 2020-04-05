@@ -40,4 +40,27 @@ class BonusServiceTest {
         long actual = service.calculate(0, true);
         assertEquals(expected, actual);
     }
+
+    @org.junit.jupiter.api.Test
+    void shouldCalculateForUnregistredAndBorderLimit() {
+        long expected = 0;
+        BonusService service = new BonusService();
+        long actual = service.calculate(0, false);
+        assertEquals(expected, actual);
+    }
+    @org.junit.jupiter.api.Test
+    void shouldCalculateForRegisteredAndEqualLimit() {
+        long expected = 0;
+        BonusService service = new BonusService();
+        long actual = service.calculate(500, true);
+        assertEquals(expected, actual);
+    }
+    @org.junit.jupiter.api.Test
+    void shouldCalculateForUnregistredAndEqualLimit() {
+        long expected = 0;
+        BonusService service = new BonusService();
+        long actual = service.calculate(500, false);
+        assertEquals(expected, actual);
+    }
 }
+
